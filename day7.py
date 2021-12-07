@@ -13,9 +13,19 @@ cMin = min(crabs)
 eMin = sys.maxsize
 lvl = -1
 for i in range(cMin, cMax + 1):
+    e = sum(map(lambda x: i - x, crabs))
+    if(e < eMin):
+        lvl = i
+        eMin = e
+        
+print(eMin)
+
+eMin = sys.maxsize
+lvl = -1
+for i in range(cMin, cMax + 1):
     e = sum(map(lambda x: (abs(i - x) * (abs(i - x) + 1)) / 2, crabs))
     if(e < eMin):
         lvl = i
         eMin = e
 
-print(eMin, lvl)
+print(int(eMin))
